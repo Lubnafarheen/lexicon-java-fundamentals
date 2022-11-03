@@ -5,7 +5,6 @@ public class Book {
     private final String author;
     private boolean available;
     private Person borrowedBy;
-    private Person returnBook;
 
     public Book(String title , String author) {
         this.available = true;
@@ -52,11 +51,4 @@ public class Book {
         return borrowedBy;
     }
 
-    public Person getReturnBook() {
-        return returnBook;
-    }
-
-    public void setReturnBook(Person returnBook) {
-        this.returnBook = returnBook;
-    }
 }

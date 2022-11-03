@@ -37,7 +37,7 @@ public class Person {
 
     public void returnBook(Book bookToRemove) {
         int borrowedBookIndex = -1;
-        for (int i = 0, booksLength = books.length; i < booksLength; i++) {
+        for (int i = 0; i < books.length; i++) {
             if (books[i].getTitle().equalsIgnoreCase(bookToRemove.getTitle())) {
                 borrowedBookIndex = i;
                 break;

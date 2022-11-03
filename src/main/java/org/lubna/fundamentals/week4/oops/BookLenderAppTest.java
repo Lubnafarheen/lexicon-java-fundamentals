@@ -1,6 +1,6 @@
 package org.lubna.fundamentals.week4.oops;
 
-public class PersonTest {
+public class BookLenderAppTest {
     public static void main(String[] args) {
 
         Book lionKing = new Book("The Lion King" , "Justine Korman");
@@ -24,6 +24,7 @@ public class PersonTest {
         lubna.borrowBook(atomicHabits);
         System.out.println(atomicHabits.bookInformation());
         System.out.println(atomicHabits.getOwnerInformation());
+        lubna.returnBook(atomicHabits);
 
         System.out.println("---------");
 
@@ -36,8 +37,6 @@ public class PersonTest {
         System.out.println(juliusCaesar.bookInformation());
 
         System.out.println("---------");
-        System.out.println(harryPotter.bookInformation());
-
-
+        System.out.println(atomicHabits.bookInformation());
     }
 }
