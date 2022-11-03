@@ -2,18 +2,42 @@ package org.lubna.fundamentals.week4.oops;
 
 public class PersonTest {
     public static void main(String[] args) {
-        Person person1 = new Person(01, "Nusayba", "Tanzeem");
-        System.out.println(person1.toString());
 
-Book book1 = new Book("Harry potter", "JK Rowling");
-        Book book2 = new Book("Harry", " Rowling");
+        Book lionKing = new Book("The Lion King" , "Justine Korman");
+        Book harryPotter = new Book("Harry potter" , "JK Rowling");
+        Book sherlockHolmes = new Book("Sherlock Holmes" , " A.C. Doyle");
+        Book atomicHabits = new Book("Atomic Habits" , "James Clear");
+        Book juliusCaesar = new Book("Julius Caesar" , "Shakespeare");
 
-        System.out.println(book1.toString());
-        person1.loanBook("Harry potter");
-        System.out.println(book1);
+
+        Person nusayba = new Person("Nusayba" , "Tanzeem");
+        nusayba.borrowBook(harryPotter);
+        nusayba.borrowBook(sherlockHolmes);
+        nusayba.displayBorrowedBooks();
+        System.out.println(harryPotter.getOwnerInformation());
+        nusayba.returnBook(harryPotter);
+        nusayba.displayBorrowedBooks();
+
+        System.out.println("---------");
+
+        Person lubna = new Person("Lubna" , "Farheen");
+        lubna.borrowBook(atomicHabits);
+        System.out.println(atomicHabits.bookInformation());
+        System.out.println(atomicHabits.getOwnerInformation());
+
+        System.out.println("---------");
+
+        Person Anna = new Person("Anna" , "Berg");
+        Anna.borrowBook(lionKing);
+        System.out.println(lionKing.bookInformation());
+        System.out.println(lionKing.getOwnerInformation());
+
+        System.out.println("---------");
+        System.out.println(juliusCaesar.bookInformation());
+
+        System.out.println("---------");
+        System.out.println(harryPotter.bookInformation());
+
 
     }
-
-
-
 }

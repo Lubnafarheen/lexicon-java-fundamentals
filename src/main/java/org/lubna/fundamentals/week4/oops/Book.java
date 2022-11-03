@@ -1,51 +1,43 @@
 package org.lubna.fundamentals.week4.oops;
 
-import java.util.Arrays;
-
 public class Book {
-    public static int count;
-    private String title;
-    private String author;
+    private final String title;
+    private final String author;
     private boolean available;
-    private Person owner;
+    private Person borrowedBy;
+    private Person returnBook;
 
-    public Book(String title,  String author ) {
+    public Book(String title , String author) {
+        this.available = true;
         this.title = title;
         this.author = author;
-        this.available = true;
     }
 
-    @Override
-    public String toString() {
+    public String getOwnerInformation() {
+        if (borrowedBy != null) {
+            return borrowedBy.personInformation();
+        }
+        return null;
+    }
+
+    public void setBorrowedBy(Person person) {
+        this.borrowedBy = person;
+    }
+
+    public String bookInformation() {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", available=" + available +
                 '}';
     }
-    public String getOwnerInformation() {
-        if (owner != null) {
-            return owner.personInformation();
-        } else {
-            return null;
-        }
-    }
-
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public boolean isAvailable() {
@@ -53,15 +45,18 @@ public class Book {
     }
 
     public void setAvailable(boolean available) {
-        this.available = true;
+        this.available = available;
     }
 
-    public Person getOwner() {
-        return owner;
+    public Person getBorrowedBy(Person person) {
+        return borrowedBy;
     }
 
-    public void setOwner(Person owner) {
-        this.owner = owner;
+    public Person getReturnBook() {
+        return returnBook;
     }
 
+    public void setReturnBook(Person returnBook) {
+        this.returnBook = returnBook;
+    }
 }

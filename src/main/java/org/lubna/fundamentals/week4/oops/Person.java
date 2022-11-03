@@ -4,78 +4,68 @@ import java.util.Arrays;
 
 public class Person {
 
-    //fields
-    private static int personIdsequencer ;
-    private String firstName;
-    private String lastName;
-    private static String[] books = {};
+    private static int personIdSequencer;
 
-
-    public static String[] getBooks() {
-        return books;
+    static {
+        personIdSequencer = 1;
     }
 
-    public static void setBooks(String[] books) {
-        Person.books = books;
+    private final int id;
+    private final String firstName;
+    private final String lastName;
+    private Book[] books = new Book[]{};
+
+    public Person(String firstName , String lastName) {
+        this.id = personIdSequencer++;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public boolean borrowBook(Book book) {
+        if (book.isAvailable()) {
+            book.setBorrowedBy(this);
+            book.setAvailable(false);
+
+            Book[] temp = Arrays.copyOf(books , books.length + 1);
+            temp[temp.length - 1] = book;
+            books = temp;
+
+            return true;
+        }
+        return false;
+    }
+
+    public void returnBook(Book bookToRemove) {
+        int borrowedBookIndex = -1;
+        for (int i = 0, booksLength = books.length; i < booksLength; i++) {
+            if (books[i].getTitle().equalsIgnoreCase(bookToRemove.getTitle())) {
+                borrowedBookIndex = i;
+                break;
+            }
+        }
+        books[borrowedBookIndex].setAvailable(true);
+        int counter = 0;
+        Book[] temp = new Book[books.length - 1];
+        for (int i = 0; i < books.length; i++) {
+            if (i == borrowedBookIndex) {
+                continue;
+            }
+            temp[counter++] = books[i];
+        }
+        books = temp;
+    }
+
+    public void displayBorrowedBooks() {
+        for (Book book : books) {
+            System.out.println(book.bookInformation());
+        }
     }
 
     public String personInformation() {
         return "Person{" +
-                "Id='"+ personIdsequencer + '\'' +
+                "Id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", Books='" + books + '\'' +
                 '}';
     }
-
-
-
-    //constructor
-    public Person(int personIdsequencer, String firstName, String lastName){
-        this.personIdsequencer = ++personIdsequencer;
-        this.firstName = firstName;
-        this.lastName = lastName;
-
-    }
-    //Setters and Getters
-    public static int getPersonIdsequencer() {
-        return personIdsequencer;
-    }
-
-    public static void setPersonIdsequencer(int personIdsequencer) {
-        Person.personIdsequencer = personIdsequencer;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    //methods
-
-public String[] loanBook(String book) {
-    String[] borrowBook = new String[0];
-    for (int i = 0; i <books.length ; i++) {
-    if (!books[i].equalsIgnoreCase(book)) {
-        System.out.println("This is not available");
-    } else {
-        borrowBook = Arrays.copyOf(books , books.length + 1);
-        borrowBook[borrowBook.length - 1] = book;
-    }
-}
-    books = borrowBook;
-    return books;
-}
-
-
-
 }
