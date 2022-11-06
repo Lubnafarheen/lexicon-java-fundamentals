@@ -16,9 +16,9 @@ public class BookLenderAppTest {
         nusayba.displayBorrowedBooks();
         System.out.println(harryPotter.getOwnerInformation());
         nusayba.returnBook(harryPotter);
-        nusayba.displayBorrowedBooks();
+        //nusayba.displayBorrowedBooks();
 
-        System.out.println("---------");
+      /*  System.out.println("---------");
 
         Person lubna = new Person("Lubna" , "Farheen");
         lubna.borrowBook(atomicHabits);
@@ -37,6 +37,9 @@ public class BookLenderAppTest {
         System.out.println(juliusCaesar.bookInformation());
 
         System.out.println("---------");
-        System.out.println(atomicHabits.bookInformation());
+        System.out.println(atomicHabits.bookInformation());*/
+
+        System.out.println("---------");
+        System.out.println(harryPotter.bookInformation());
     }
 }
