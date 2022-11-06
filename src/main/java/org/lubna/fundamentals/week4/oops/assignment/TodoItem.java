@@ -17,9 +17,9 @@ public class TodoItem {
 
     public TodoItem(String title , String taskDescription , LocalDate deadline , boolean done , Person creator) {
         this.id = personIdSequencer++;
-        setTitle(title);
+       this.title = title;
         this.taskDescription = taskDescription;
-        setDeadline(deadline);
+        this.deadline = deadline;
         this.done = done;
         this.creator = creator;
     }

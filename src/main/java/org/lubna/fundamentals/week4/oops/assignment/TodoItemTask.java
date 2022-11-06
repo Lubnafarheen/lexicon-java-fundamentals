@@ -15,7 +15,7 @@ public class TodoItemTask {
     public TodoItemTask(boolean assigned , TodoItem todoItem , Person assignee) {
         this.id = personIdSequencer++;
         this.assigned = assigned;
-        setTodoItem(todoItem);
+        this.todoItem = todoItem;
         this.assignee = assignee;
     }
 
