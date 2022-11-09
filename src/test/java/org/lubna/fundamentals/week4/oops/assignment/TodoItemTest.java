@@ -12,10 +12,17 @@ public class TodoItemTest {
         TodoItem todoItem = new TodoItem("Study", "complete a chapter", LocalDate.of(2022, 11, 4), false, new Person("Lubna", "Farheen", "lubna@gmail.com"));
         Assert.assertEquals("Study", todoItem.getTitle());
         Assert.assertEquals("complete a chapter", todoItem.getTaskDescription());
-        Assert.assertEquals(2022-11-04, todoItem.getDeadline());
         Assert.assertEquals("false", todoItem.isDone());
         Assert.assertEquals("new Person(1, Lubna Farheen, lubna@gmail.com)", todoItem.getCreator());
     }
+
+  /*  @Test
+    public void test_todoItemLocalDate(){
+        LocalDate expected = LocalDate.parse("2022-10-29");
+        Object todoItem;
+        LocalDate actual = todoItem.getDeadLine();
+        Assert.assertEquals(expected,actual);
+    }*/
 
     @Test
     public void getSummaryOfTodoItems_test() {
