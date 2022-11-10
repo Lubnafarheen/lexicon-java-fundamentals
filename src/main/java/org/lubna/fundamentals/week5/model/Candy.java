@@ -4,7 +4,7 @@ public class Candy implements Product {
     private static int sequencer = 100;
     private int id;
     private String name = "Candies";
-    private double price = 25.00;
+    public double price = 25.00;
 
     public Candy() {
         this.id = ++sequencer;

@@ -1,6 +1,6 @@
 package org.lubna.fundamentals.week5.model;
 
-public class AppTest {
+public class VendingMachineTestDrive {
     public static void main(String[] args) {
         Candy candy= new Candy();
         System.out.println(candy.examine());

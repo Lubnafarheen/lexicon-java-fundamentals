@@ -3,7 +3,7 @@ package org.lubna.fundamentals.week5.service;
 import org.lubna.fundamentals.week5.model.Product;
 
 public interface IVendingMachine {
-    void addCurrency(double amount);
+    int addCurrency(double amount);
 
     int getBalance();
 
