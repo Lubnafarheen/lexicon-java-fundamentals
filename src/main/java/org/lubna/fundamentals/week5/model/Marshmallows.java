@@ -10,8 +10,6 @@ public class Marshmallows implements Product {
 
     public Marshmallows() {
         this.id = ++sequencer;
-        this.name = name;
-        this.price = price;
     }
 
     @Override
@@ -30,12 +28,12 @@ public class Marshmallows implements Product {
 
     @Override
     public int getId() {
-        return this.id = id;
+        return id;
     }
 
     @Override
     public String getProductName() {
-        return this.name = name;
+        return name;
     }
 
     @Override

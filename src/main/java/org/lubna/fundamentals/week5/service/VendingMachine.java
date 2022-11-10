@@ -1,47 +1,33 @@
 package org.lubna.fundamentals.week5.service;
 
-import org.lubna.fundamentals.week5.model.Candy;
 import org.lubna.fundamentals.week5.model.Currency;
 import org.lubna.fundamentals.week5.model.Product;
 
 public class VendingMachine implements IVendingMachine {
 
     private Product[] products;
-    private int depositPool;
-    private Currency checkCurrency;
+    private Currency depositPool;
 
-    public VendingMachine(Product[] products, int depositPool, Currency checkCurrency) {
+    public VendingMachine(Product[] products, Currency depositPool) {
         this.products = products;
         this.depositPool = depositPool;
-        this.checkCurrency = checkCurrency;
     }
 
     public void setProducts(Product[] products) {
         this.products = products;
     }
 
-    public int getDepositPool() {
+    public Currency getDepositPool() {
         return depositPool;
     }
 
-    public void setDepositPool(int depositPool) {
+    public void setDepositPool(Currency depositPool) {
         this.depositPool = depositPool;
     }
-
-    public Currency getCheckCurrency() {
-        return checkCurrency;
-    }
-
-    public void setCheckCurrency(Currency checkCurrency) {
-        this.checkCurrency = checkCurrency;
-    }
-
 
     @Override
     public void addCurrency(double amount) {
         for (Product product : products) {
-
-
         }
     }
 
@@ -53,6 +39,11 @@ public class VendingMachine implements IVendingMachine {
 
     @Override
     public Product request(int id) {
+        for (Product product : products) {
+            if (id == product.getId()) {
+                return product;
+            }
+        }
         return null;
     }
 
@@ -64,11 +55,21 @@ public class VendingMachine implements IVendingMachine {
 
     @Override
     public String getDescription(int id) {
-        return null;
+        for (Product product : products) {
+            if (id == product.getId()) {
+                return product.use();
+            }
+        }
+        return "This product is not available!";
     }
 
     @Override
     public String[] getProducts() {
+        for (Product product : products) {
+                if(product.getProductName()!= null){
+            }
+        }
+
         return new String[0];
     }
 

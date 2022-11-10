@@ -6,11 +6,8 @@ public class Candy implements Product {
     private String name = "Candies";
     private double price = 25.00;
 
-
     public Candy() {
         this.id = ++sequencer;
-        this.name = name;
-        this.price = price;
     }
 
     @Override
@@ -29,12 +26,12 @@ public class Candy implements Product {
 
     @Override
     public int getId() {
-        return this.id = id;
+        return id;
     }
 
     @Override
     public String getProductName() {
-        return this.name = name;
+        return name;
     }
 
     @Override

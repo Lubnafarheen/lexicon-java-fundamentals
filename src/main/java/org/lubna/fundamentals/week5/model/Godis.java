@@ -9,8 +9,6 @@ public class Godis implements Product {
 
     public Godis() {
         this.id = ++sequencer;
-        this.name = name;
-        this.price = price;
     }
 
     @Override
@@ -29,12 +27,12 @@ public class Godis implements Product {
 
     @Override
     public int getId() {
-        return this.id = id;
+        return id;
     }
 
     @Override
     public String getProductName() {
-        return this.name = name;
+        return name;
     }
 
     @Override
