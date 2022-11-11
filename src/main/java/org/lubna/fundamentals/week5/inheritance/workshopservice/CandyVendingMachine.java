@@ -1,6 +1,6 @@
 package org.lubna.fundamentals.week5.inheritance.workshopservice;
 
-import org.lubna.fundamentals.week5.model.Product;
+import org.lubna.fundamentals.week5.inheritance.workshopabstractmodel.Product;
 
 public interface CandyVendingMachine {
 

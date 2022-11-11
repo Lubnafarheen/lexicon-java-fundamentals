@@ -3,8 +3,6 @@ package org.lubna.fundamentals.week5.model;
 import org.lubna.fundamentals.week5.service.IVendingMachine;
 import org.lubna.fundamentals.week5.service.VendingMachine;
 
-import java.util.Scanner;
-
 public class VendingMachineTestDrive {
     public static void main(String[] args) {
         Product[] products = { new Candy(), new Godis(), new Marshmallows() };

@@ -1,9 +1,9 @@
 package org.lubna.fundamentals.week5.inheritance.workshopabstractmodel;
 
 public abstract class Product {
-    private int id;
-    private double price;
-    private String productName;
+    private final int id;
+    private final double price;
+    private final String productName;
 
     public Product(int id, double price, String productName) {
         this.id = id;
@@ -15,28 +15,16 @@ public abstract class Product {
 
     public abstract String use();
 
-
-    public int getId() {
+    public int id() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getPrice() {
+    public double price() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getProductName() {
+    public String productName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
 }

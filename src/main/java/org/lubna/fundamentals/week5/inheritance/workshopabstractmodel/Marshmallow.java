@@ -1,10 +1,10 @@
 package org.lubna.fundamentals.week5.inheritance.workshopabstractmodel;
 
-public class Marshmallows extends Product {
+public class Marshmallow extends Product {
 
     private final String veganOrNot;
 
-    protected Marshmallows(int id, double price, String productName, String veganOrNot) {
+    protected Marshmallow(int id, double price, String productName, String veganOrNot) {
         super(id, price, productName);
         this.veganOrNot = veganOrNot;
     }
@@ -16,6 +16,6 @@ public class Marshmallows extends Product {
 
     @Override
     public String use() {
-        return getProductName() + "Tested to be 100% vegan";
+        return productName() + "Tested to be 100% vegan";
     }
 }

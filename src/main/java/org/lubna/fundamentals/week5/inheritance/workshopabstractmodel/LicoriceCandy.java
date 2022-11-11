@@ -1,6 +1,6 @@
 package org.lubna.fundamentals.week5.inheritance.workshopabstractmodel;
 
-public class LicoriceCandy extends Product{
+public class LicoriceCandy extends Product {
 
     private final String flavour;
 
@@ -16,6 +16,6 @@ public class LicoriceCandy extends Product{
 
     @Override
     public String use() {
-        return getProductName() + "Taste varies from flavour to flavour";
+        return productName() + "Taste varies from flavour to flavour";
     }
 }
