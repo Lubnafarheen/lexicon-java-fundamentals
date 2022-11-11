@@ -2,7 +2,7 @@ package org.lubna.fundamentals.week5.model;
 
 public class VendingMachineTestDrive {
     public static void main(String[] args) {
-        Candy candy= new Candy();
+        Candy candy = new Candy();
         System.out.println(candy.examine());
 
         Godis godis = new Godis();

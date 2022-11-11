@@ -1,4 +1,4 @@
-package org.lubna.fundamentals.week5.inheritance;
+package org.lubna.fundamentals.week5.inheritance.model;
 
 import org.lubna.fundamentals.week5.inheritance.data.StudentRepository;
 import org.lubna.fundamentals.week5.inheritance.model.Gender;

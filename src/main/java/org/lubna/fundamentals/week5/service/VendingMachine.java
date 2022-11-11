@@ -6,13 +6,12 @@ import java.util.Arrays;
 
 public class VendingMachine implements IVendingMachine {
 
+    public static final int[] VALID_DENOMINATIONS = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000 };
     private Product[] products;
     private int depositPool;
-    private double money;
 
-    public VendingMachine(Product[] products, int depositPool) {
+    public VendingMachine(Product[] products) {
         this.products = products;
-        this.depositPool = depositPool;
     }
 
     public void setProducts(Product[] products) {
@@ -27,52 +26,41 @@ public class VendingMachine implements IVendingMachine {
         this.depositPool = depositPool;
     }
 
-    public void addProducts(Product[] products) {
-        for (Product product : products) {
-            Product[] temp = Arrays.copyOf(products, products.length + 1);
-            temp[temp.length - 1] = product;
-            products = temp;
-        }
-    }
-
     @Override
-    public int addCurrency(double amount) {
-
-        return 0;
+    public void addCurrency(int amount) {
+        for (int validDenomination : VALID_DENOMINATIONS) {
+            if (validDenomination == amount) {
+                depositPool += amount;
+            }
+        }
     }
 
     @Override
     public int getBalance() {
-        for (int i = 0, productsLength = products.length; i < productsLength; i++) {
-            Product product = products[i];
-            if (product.getPrice() == money) {
-                System.out.println("Enjoy your product!");
-                break;
-            } else if (money > product.getPrice()) {
-                int total = (int) (money - product.getPrice());
-                return total;
-            } else if (money < product.getPrice()) {
-                System.out.println("Insufficient amount to buy this product");
-                break;
-            }
-        }
         return depositPool;
     }
 
     @Override
     public Product request(int id) {
         for (Product product : products) {
-            if (id == product.getId()) {
-                return product;
+            if (product.getId() == id) {
+                if (product.getPrice() <= depositPool) {
+                    depositPool = (int) (depositPool - product.getPrice());
+                    return product;
+                } else {
+                    throw new RuntimeException("Product " + product.getProductName() + " is too expensive");
+                }
             }
         }
-        return null;
+        throw new RuntimeException("Could not find Product with id " + id);
     }
 
     @Override
     public int endSession() {
-        products = new Product[]{};
-        return 0;
+        int temp = depositPool;
+        depositPool = 0;
+        return temp;
+
     }
 
     @Override
