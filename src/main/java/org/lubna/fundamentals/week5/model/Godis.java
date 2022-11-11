@@ -1,14 +1,13 @@
 package org.lubna.fundamentals.week5.model;
 
 public class Godis implements Product {
-    private static int sequencer = 100;
-    private int id;
+
+    private int id = 2;
     private String name = "Goodies";
     private double price = 50.00;
 
 
     public Godis() {
-        this.id = ++sequencer;
     }
 
     @Override
@@ -38,7 +37,6 @@ public class Godis implements Product {
     @Override
     public void setProductName(String productName) {
         this.name = productName;
-
     }
 
     @Override

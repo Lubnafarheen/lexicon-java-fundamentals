@@ -2,14 +2,11 @@ package org.lubna.fundamentals.week5.model;
 
 public class Marshmallows implements Product {
 
-    private static int sequencer = 100;
-    private int id;
+    private final int id = 3;
     private String name = "Marshmallows";
     private double price = 100.00;
 
-
     public Marshmallows() {
-        this.id = ++sequencer;
     }
 
     @Override
@@ -39,7 +36,6 @@ public class Marshmallows implements Product {
     @Override
     public void setProductName(String productName) {
         this.name = productName;
-
     }
 
     @Override

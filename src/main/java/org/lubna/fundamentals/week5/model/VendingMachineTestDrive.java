@@ -1,11 +1,29 @@
 package org.lubna.fundamentals.week5.model;
 
+import org.lubna.fundamentals.week5.service.IVendingMachine;
+import org.lubna.fundamentals.week5.service.VendingMachine;
+
+import java.util.Scanner;
+
 public class VendingMachineTestDrive {
     public static void main(String[] args) {
-        Candy candy = new Candy();
-        System.out.println(candy.examine());
+        Product[] products = { new Candy(), new Godis(), new Marshmallows() };
 
-        Godis godis = new Godis();
-        System.out.println(godis.getPrice());
+        IVendingMachine candyVendingMachine = new VendingMachine(products);
+
+       /* for (String string : candyVendingMachine.getProducts()) {
+            System.out.println(string);
+*/
+        candyVendingMachine.depositedAmount(20);
+        candyVendingMachine.depositedAmount(10);
+        System.out.println(candyVendingMachine.getBalance());
+
+        candyVendingMachine.buyProduct(1);
+
+        System.out.println(candyVendingMachine.endSession());
+
+        System.out.println(candyVendingMachine.getBalance());
+
+        System.out.println(candyVendingMachine.getDescription(3));
     }
 }

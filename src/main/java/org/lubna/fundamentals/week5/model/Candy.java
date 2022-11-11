@@ -1,13 +1,11 @@
 package org.lubna.fundamentals.week5.model;
 
 public class Candy implements Product {
-    private static int sequencer = 100;
-    private int id;
+    private final int id = 1;
     private String name = "Candies";
-    public double price = 25.00;
+    public  double price = 25.00;
 
     public Candy() {
-        this.id = ++sequencer;
     }
 
     @Override
@@ -36,7 +34,7 @@ public class Candy implements Product {
 
     @Override
     public void setProductName(String productName) {
-        this.name = productName;
+        this.name =name;
     }
 
     @Override

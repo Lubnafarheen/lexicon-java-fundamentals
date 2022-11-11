@@ -1,8 +1,9 @@
-package org.lubna.fundamentals.week5.service;
+package org.lubna.fundamentals.week5.inheritance.workshopservice;
 
 import org.lubna.fundamentals.week5.model.Product;
 
-public interface IVendingMachine {
+public interface CandyVendingMachine {
+
     void depositedAmount(int amount);
 
     int getBalance();
@@ -15,3 +16,4 @@ public interface IVendingMachine {
 
     String[] getProducts();
 }
+

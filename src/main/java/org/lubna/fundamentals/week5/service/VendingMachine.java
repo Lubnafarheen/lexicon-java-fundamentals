@@ -27,7 +27,7 @@ public class VendingMachine implements IVendingMachine {
     }
 
     @Override
-    public void addCurrency(int amount) {
+    public void depositedAmount(int amount) {
         for (int validDenomination : VALID_DENOMINATIONS) {
             if (validDenomination == amount) {
                 depositPool += amount;
@@ -41,7 +41,7 @@ public class VendingMachine implements IVendingMachine {
     }
 
     @Override
-    public Product request(int id) {
+    public Product buyProduct(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
                 if (product.getPrice() <= depositPool) {
@@ -60,7 +60,6 @@ public class VendingMachine implements IVendingMachine {
         int temp = depositPool;
         depositPool = 0;
         return temp;
-
     }
 
     @Override
@@ -75,10 +74,11 @@ public class VendingMachine implements IVendingMachine {
 
     @Override
     public String[] getProducts() {
-        for (Product product : products)
-            if (product.getProductName() != null)
-                return new String[]{ product.examine() };
-        return new String[0];
+        String[] productsAsString = new String[products.length];
+        for (int i = 0; i < products.length; i++) {
+            productsAsString[i] = products[i].examine();
+        }
+        return productsAsString;
     }
 }
 
