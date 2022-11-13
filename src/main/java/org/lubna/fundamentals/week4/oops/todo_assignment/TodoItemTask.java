@@ -1,4 +1,6 @@
-package org.lubna.fundamentals.week4.oops.assignment;
+package org.lubna.fundamentals.week4.oops.todo_assignment;
+
+import java.util.Objects;
 
 public class TodoItemTask {
     private static int personIdSequencer;
@@ -7,25 +9,38 @@ public class TodoItemTask {
         personIdSequencer = 1;
     }
 
-    private int id;
+    private final int id;
     private boolean assigned;
     private TodoItem todoItem;
     private Person assignee;
 
-    public TodoItemTask(boolean assigned , TodoItem todoItem , Person assignee) {
+    public TodoItemTask(boolean assigned, TodoItem todoItem, Person assignee) {
         this.id = personIdSequencer++;
         this.assigned = assigned;
         this.todoItem = todoItem;
         this.assignee = assignee;
     }
 
-    public String getSummaryOfTodoItemTask() {
+    @Override
+    public String toString() {
         return "TodoItemTask{" +
                 "id=" + id +
                 ", assigned=" + assigned +
-                ", todoItem=" + todoItem.getSummaryOfTodoItems() +
-                ", assignee=" + assignee.getSummary() +
+                ", todoItem=" + todoItem +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        TodoItemTask that = (TodoItemTask) object;
+        return id == that.id && assigned == that.assigned && Objects.equals(todoItem, that.todoItem);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, assigned, todoItem);
     }
 
     public int getId() {
@@ -57,6 +72,4 @@ public class TodoItemTask {
         this.assigned = true;
         this.assignee = assignee;
     }
-
-
 }

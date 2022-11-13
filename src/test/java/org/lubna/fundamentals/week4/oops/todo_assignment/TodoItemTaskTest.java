@@ -1,4 +1,4 @@
-package org.lubna.fundamentals.week4.oops.assignment;
+package org.lubna.fundamentals.week4.oops.todo_assignment;
 
 import org.junit.Test;
 
@@ -13,13 +13,13 @@ public class TodoItemTaskTest {
     public void TodoItemTaskConstructor_Test() {
         TodoItemTask todoItemTask = new TodoItemTask(true, new TodoItem("Study", "complete a chapter", LocalDate.of(2022, 11, 4), false, new Person("Lubna", "Farheen", "lubna@gmail.com")), new Person("Farheen", "Khan", "farheen@gmail.com"));
         assertTrue(todoItemTask.isAssigned());
-        assertEquals("TodoItem{id=1, title='Study', taskDescription='complete a chapter', deadline=2022-11-04, done=false, creator=Person{id=1, name='Lubna Farheen', email='lubna@gmail.com'}}", todoItemTask.getTodoItem().getSummaryOfTodoItems());
-        assertEquals("Person{id=2, name='Farheen Khan', email='farheen@gmail.com'}", todoItemTask.getAssignee().getSummary());
+        assertEquals("TodoItem{id=0, title='Study', taskDescription='complete a chapter', deadline=2022-11-04, done=false, creator=Person{id=1, name='Lubna Farheen', email='lubna@gmail.com'}}", todoItemTask.getTodoItem().toString());
+        assertEquals("Person{id=2, name='Farheen Khan', email='farheen@gmail.com'}", todoItemTask.getAssignee().toString());
     }
 
     @Test
     public void getSummaryOfTodoItemTask_test() {
         TodoItemTask todoItemTask = new TodoItemTask(true, new TodoItem("Study", "complete a chapter", LocalDate.of(2022, 11, 4), false, new Person("Lubna", "Farheen", "lubna@gmail.com")), new Person("Farheen", "Khan", "farheen@gmail.com"));
-        assertEquals("TodoItemTask{id=1, assigned=true, todoItem=TodoItem{id=1, title='Study', taskDescription='complete a chapter', deadline=2022-11-04, done=false, creator=Person{id=1, name='Lubna Farheen', email='lubna@gmail.com'}}, assignee=Person{id=2, name='Farheen Khan', email='farheen@gmail.com'}}", todoItemTask.getSummaryOfTodoItemTask());
+        assertEquals("TodoItemTask{id=0, assigned=true, todoItem=TodoItem{id=0, title='Study', taskDescription='complete a chapter', deadline=2022-11-04, done=false, creator=Person{id=0, name='Lubna Farheen', email='lubna@gmail.com'}}, assignee=Person{id=1, name='Farheen Khan', email='farheen@gmail.com'}}", todoItemTask.toString());
     }
 }

@@ -1,14 +1,10 @@
-package org.lubna.fundamentals.week4.oops;
+package org.lubna.fundamentals.week4.oops.practisecode;
 
 import java.util.Arrays;
 
 public class Person {
 
     private static int personIdSequencer;
-
-    static {
-        personIdSequencer = 1;
-    }
 
     private final int id;
     private final String firstName;

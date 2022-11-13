@@ -1,4 +1,4 @@
-package org.lubna.fundamentals.week4.oops;
+package org.lubna.fundamentals.week4.oops.practisecode;
 
 public class PersonConstructor {
     public static void main(String[] args) {

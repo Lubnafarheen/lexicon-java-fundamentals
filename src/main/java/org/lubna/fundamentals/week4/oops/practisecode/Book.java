@@ -1,4 +1,4 @@
-package org.lubna.fundamentals.week4.oops;
+package org.lubna.fundamentals.week4.oops.practisecode;
 
 public class Book {
     private final String title;
