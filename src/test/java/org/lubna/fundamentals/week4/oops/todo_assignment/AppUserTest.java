@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class AppUserTest extends TestCase {
 
-    @Test
     public void testTestEquals() {
         AppUser user1 = new AppUser("Lubna", "lubna1234", AppRole.ROLE_APP_USER);
         AppUser user2 = new AppUser("Lubna", "lubna123", AppRole.ROLE_APP_USER);
@@ -18,7 +17,6 @@ public class AppUserTest extends TestCase {
 
     }
 
-    @Test
     public void testTestToString() {
         AppUser user1 = new AppUser("Lubna", "lubna1234", AppRole.ROLE_APP_USER);
         assertEquals("AppUser{username='Lubna', role=ROLE_APP_USER}", user1.toString());

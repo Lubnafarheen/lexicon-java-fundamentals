@@ -6,6 +6,7 @@ public class TodoAppTest {
     public static void main(String[] args) {
         Person lubna = new Person("Lubna", "Farheen", "lubna@gmail.com");
         System.out.println(lubna.toString());
+        System.out.println(lubna.hashCode());
 
         Person farheen = new Person("Farheen", "Khan", "farheen@gmail.com");
         System.out.println(farheen.toString());
@@ -14,8 +15,6 @@ public class TodoAppTest {
 
         TodoItemTask itemTask = new TodoItemTask(true, item1, farheen);
         System.out.println(itemTask.getTodoItem().toString());
-
-
 
         AppUser appUser = new AppUser("Lubna", "lubna1234", AppRole.ROLE_APP_USER);
         AppUser appUser1 = new AppUser("Lubna", "lubna123", AppRole.ROLE_APP_USER);
