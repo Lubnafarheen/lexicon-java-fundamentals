@@ -1,7 +1,8 @@
 package org.lubna.fundamentals.week4.oops.todo_assignment;
 
 import junit.framework.TestCase;
-import org.junit.Test;
+import org.lubna.fundamentals.week4.oops.todo_assignment.model.AppRole;
+import org.lubna.fundamentals.week4.oops.todo_assignment.model.AppUser;
 
 public class AppUserTest extends TestCase {
 

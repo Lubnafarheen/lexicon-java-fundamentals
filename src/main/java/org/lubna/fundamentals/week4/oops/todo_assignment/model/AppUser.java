@@ -1,4 +1,4 @@
-package org.lubna.fundamentals.week4.oops.todo_assignment;
+package org.lubna.fundamentals.week4.oops.todo_assignment.model;
 
 import java.util.Objects;
 

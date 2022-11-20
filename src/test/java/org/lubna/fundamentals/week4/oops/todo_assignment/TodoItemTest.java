@@ -2,6 +2,8 @@ package org.lubna.fundamentals.week4.oops.todo_assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.lubna.fundamentals.week4.oops.todo_assignment.model.Person;
+import org.lubna.fundamentals.week4.oops.todo_assignment.model.TodoItem;
 
 import java.time.LocalDate;
 

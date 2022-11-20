@@ -1,18 +1,23 @@
-package org.lubna.fundamentals.week4.oops.todo_assignment;
+package org.lubna.fundamentals.week4.oops.todo_assignment.model;
 
 import java.util.Objects;
 
 public class Person {
     private static int personIdSequencer;
 
-    private final int id;
+    static {
+        personIdSequencer = 1;
+    }
+
+    private int id;
     private final String firstName;
     private final String lastName;
     private final String email;
     private AppUser credentials;
 
     public Person(String firstName, String lastName, String email) {
-        this.id = ++personIdSequencer;
+        this.id = personIdSequencer++;
+        ;
 
         validateInput("firstName", firstName);
         this.firstName = firstName;

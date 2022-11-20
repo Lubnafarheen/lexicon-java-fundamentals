@@ -2,16 +2,9 @@ package org.lubna.fundamentals.week4.oops.todo_assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.lubna.fundamentals.week4.oops.todo_assignment.model.Person;
 
 public class PersonTest {
-
-    @Test
-    public void Constructor_test() {
-        Person person1 = new Person("Lubna", "Farheen", "lubna@gmail.com");
-        Assert.assertEquals("Lubna", person1.getFirstName());
-        Assert.assertEquals("Farheen", person1.getLastName());
-        Assert.assertEquals("lubna@gmail.com", person1.getEmail());
-    }
 
     @Test
     public void getSummary_test() {
