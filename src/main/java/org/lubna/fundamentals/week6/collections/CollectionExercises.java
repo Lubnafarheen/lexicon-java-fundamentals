@@ -1,11 +1,10 @@
 package org.lubna.fundamentals.week6.collections;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.*;
 
 public class CollectionExercises {
     public static void main(String[] args) {
-        ex7();
+        ex12();
     }
 
     public static void ex1() {
@@ -106,8 +105,65 @@ public class CollectionExercises {
         fruits.add("Banana");
 
         List<String> arrayList = new ArrayList<>(fruits);
+        Collections.sort(arrayList);
         System.out.println(arrayList);
+
     }
+
+    public static void ex8() {
+        Set<String> names = new HashSet<>();
+        names.add("a");
+        names.add("z");
+        names.add("m");
+        names.add("r");
+        names.add("t");
+        TreeSet<String> treeSet = new TreeSet<String>(names);
+        System.out.println(treeSet);
+    }
+
+    public static void ex9() {
+        Map<Integer, String> cars = new HashMap<>();
+        cars.put(1, "Ford");
+        cars.put(2, "BMW");
+        cars.put(3, "Mercedes");
+        cars.put(4, "Toyota");
+
+        for (Map.Entry entry : cars.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public static void ex10(){
+        Map<Integer, String> cars = new HashMap<>();
+        cars.put(1, "Ford");
+        cars.put(2, "BMW");
+        cars.put(3, "Mercedes");
+        cars.put(4, "Toyota");
+
+        for (Map.Entry entry : cars.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+    }
+
+    public static void ex11(){
+        Map<Integer, String> cars = new HashMap<>();
+        cars.put(1, "Ford");
+        cars.put(2, "BMW");
+        cars.put(3, "Mercedes");
+        cars.put(4, "Toyota");
+
+        for (Map.Entry entry : cars.entrySet()) {
+            System.out.println(entry.getKey());
+        }
+    }
+
+    public static void ex12(){
+        Map<Integer, Car> cars = new HashMap<>();
+        cars.put(1, new Car(1, "Ford","2012"));
+        cars.put(2, new Car(2, "Toyota","2012"));
+        System.out.println(cars.get(2));
+    }
+
 
 }
 
