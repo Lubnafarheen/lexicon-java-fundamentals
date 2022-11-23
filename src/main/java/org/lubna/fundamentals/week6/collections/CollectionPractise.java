@@ -21,7 +21,6 @@ public class CollectionPractise {
         System.out.println("index[2]=" + numbers.get(2));
         System.out.println("index[3]=" + numbers.get(3));
 
-
         //remove element
 
         Iterator<Integer> iterator = numbers.iterator();
@@ -143,7 +142,6 @@ public class CollectionPractise {
         for (Person person : people) {
             System.out.println(person.getId() + " " + person.getName());
         }
-
     }
 
     public static void hashSetExample() {

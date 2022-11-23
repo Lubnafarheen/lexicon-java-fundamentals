@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CollectionExercises {
     public static void main(String[] args) {
-        ex12();
+        ex7();
     }
 
     public static void ex1() {
@@ -103,6 +103,7 @@ public class CollectionExercises {
         fruits.add("Kiwi");
         fruits.add("Grapes");
         fruits.add("Banana");
+        System.out.println(fruits);
 
         List<String> arrayList = new ArrayList<>(fruits);
         Collections.sort(arrayList);
