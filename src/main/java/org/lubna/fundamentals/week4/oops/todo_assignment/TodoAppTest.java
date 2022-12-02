@@ -11,6 +11,7 @@ public class TodoAppTest {
         Person lubna = new Person("Lubna", "Farheen", "lubna@gmail.com");
         Person farheen = new Person("Farheen", "Khan", "farheen@gmail.com");
 
+
         TodoItem item1 = new TodoItem("Study", "complete a chapter", LocalDate.of(2022, 12, 4), false, lubna);
         TodoItem item2 = new TodoItem("Walk", "A walk for 20 minutes everyday", LocalDate.of(2022, 12, 20), false, lubna);
         TodoItemTask itemTask1 = new TodoItemTask(true, item1, farheen);
@@ -18,12 +19,14 @@ public class TodoAppTest {
 
         AppUser appUser = new AppUser("Lubna", "lubna1234", AppRole.ROLE_APP_USER);
         AppUser appUser1 = new AppUser("Lubna Farheen", "lubna123", AppRole.ROLE_APP_USER);
+        AppUser appUser2 = new AppUser("user","user000", AppRole.ROLE_APP_USER);
 
         AppUserDAO appUserDAO = new AppUserDaoCollection();
         appUserDAO.persist(appUser);
         appUserDAO.persist(appUser1);
         System.out.println(appUserDAO.findAll());
         appUserDAO.remove("Lubna");
+        appUserDAO.persist(appUser);
         System.out.println(appUserDAO.findAll());
         System.out.println("-----");
 

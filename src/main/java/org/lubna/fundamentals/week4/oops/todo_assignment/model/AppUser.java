@@ -8,6 +8,10 @@ public class AppUser {
     private final String password;
     private AppRole role;
 
+
+    // full constructor - findById
+    // constructor without id -  - create
+
     public AppUser(String username, String password, AppRole role) {
 
         validateInput("Username", username);
